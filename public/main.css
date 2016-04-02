@@ -5,3 +5,83 @@
   padding: 0;
   font-family: 'Open Sans';
   font-weight: 300; }
+
+body {
+  margin: 20px auto;
+  background-color: #fff; }
+
+a, a:visited {
+  text-decoration: none;
+  color: #2e3233; }
+
+h1, h2 {
+  font-weight: 600; }
+
+header {
+  display: block;
+  text-align: center; }
+
+.card {
+  display: block;
+  background-color: whitesmoke;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  color: white !important;
+  margin: 2px; }
+  @media (max-width: 600px) {
+    .card {
+      width: 200px; } }
+
+.linkedin {
+  background-color: #069; }
+  .linkedin:hover {
+    background-color: #0077b3; }
+
+.github {
+  background-color: #333; }
+  .github:hover {
+    background-color: #404040; }
+
+.codepen {
+  background-color: #333; }
+  .codepen:hover {
+    background-color: #404040; }
+
+.flex-container-outer {
+  height: 75vh;
+  width: 100vw;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.flex-container-inner {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 400px;
+  width: 600px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  @media (max-width: 600px) {
+    .flex-container-inner {
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center; } }

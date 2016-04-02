@@ -1,0 +1,39 @@
+.card {
+    display: block;
+    background-color: darken(#fafafa, 2%);
+    box-shadow: 0 0 5px rgba(0,0,0,0.15);
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    color: white !important;
+    margin: 2px;
+    
+    @media (max-width: 600px) {
+        
+        width: 200px;
+    }
+}
+
+.linkedin {
+    background-color: #069;
+    
+    &:hover {
+        background-color: lighten(#069, 5%);
+    }
+}
+
+.github {
+    background-color: #333;
+    
+    &:hover {
+        background-color: lighten(#333, 5%);
+    }
+}
+
+.codepen {
+    background-color: #333;
+    
+    &:hover {
+        background-color: lighten(#333, 5%);
+    }
+}

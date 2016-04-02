@@ -4,6 +4,7 @@ var del = require('del');
 var replace = require('gulp-replace');
 var debug = require('gulp-debug');
 var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 var watch = require('gulp-watch');
 var browserSync = require('browser-sync').create();
 
@@ -18,6 +19,10 @@ gulp.task('del', function() {
 gulp.task('styles', function() {
     gulp.src('src/scss/main.scss')
         .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
         .pipe(gulp.dest('public'))
         .pipe(browserSync.stream());
 });

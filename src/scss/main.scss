@@ -1,10 +1,30 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,600);
+@import 'variables';
+@import 'base';
+@import 'header';
+@import 'card';
 
-* {
-    box-sizing: border box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans';
-    font-weight: 300;
+.flex-container-outer {
+    height: 75vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.flex-container-inner {
+    display: flex;
+    height: 400px;
+    width: 600px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+    @media (max-width: 600px) {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+
 
