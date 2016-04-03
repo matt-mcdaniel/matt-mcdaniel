@@ -1,7 +1,7 @@
 {
-  "name": "sensutec_com",
+  "name": "matt-mcdaniel",
   "version": "1.0.0",
-  "description": "Sensutec Home Page",
+  "description": "Matt McDaniel Home Page",
   "main": "src/main.js",
   "dependencies": {},
   "devDependencies": {
@@ -13,24 +13,33 @@
     "gulp-include": "^2.1.0",
     "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.2.0",
-    "gulp-watch": "^4.3.5"
+    "gulp-watch": "^4.3.5",
+    "jspm": "^0.16.32"
   },
   "scripts": {
-    "build": "NODE_ENV=production gulp",
-    "dev": "NODE_ENV=development gulp",
+    "build": "NODE_ENV=production gulp && jspm bundle src/js/main public/main.bundle.js --inject",
+    "dev": "NODE_ENV=development jspm unbundle && gulp",
     "serve": "browser-sync start --server --files 'index.html, **/*.css, **/*.html'"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sensutec/sensutec_com.git"
+    "url": "git+https://github.com/matt-mcdaniel/matt-mcdaniel.git"
   },
   "keywords": [
-    "sensutec"
+    "matt",
+    "mcdaniel"
   ],
-  "author": "Sensutec LLC",
+  "author": "Matt McDaniel",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sensutec/sensutec_com/issues"
-  },
-  "homepage": "https://github.com/sensutec/sensutec_com#readme"
+  "homepage": "http://www.matt-mcdaniel.com",
+  "jspm": {
+    "dependencies": {
+      "d3": "npm:d3@^3.5.16"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  }
 }
