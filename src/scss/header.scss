@@ -1,4 +1,43 @@
 header {
-    display: block;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    
+    @media (max-width: $mobile) {
+        text-align: center;
+        flex-direction: column;
+    }
+}
+
+.header__img {
+    padding: 35px;
+    width: 155px;
+    height: 155px;
+}
+
+.header__text {
+    border-top: 1px solid $lightgray;
+    border-bottom: 1px solid $lightgray;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    @media (max-width: $mobile) {
+        justify-content: flex-start;
+        padding-top: 35px;
+    }
+}
+
+.name {
+    margin-top: -6px;
+}
+
+.title {
+    margin-bottom: 20px;
+    
+    @media (max-width: $mobile) {
+        margin-bottom: 35px;
+        font-size: 13px;
+    }
 }

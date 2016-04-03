@@ -12,7 +12,7 @@ var ENV = process.env.NODE_ENV;
 
 // delete build folder
 gulp.task('del', function() {
-    del('public/**/*');
+    del('public/');
 });
 
 // build public/main.css
@@ -28,12 +28,17 @@ gulp.task('styles', function() {
 });
 
 // build src/**/*.html into public/*.html
-gulp.task('build', function() {
+gulp.task('build-html', function() {
     gulp.src(['src/templates/*.html'])
         .pipe(include())
         .pipe(replace(/public\/([a-z1-9\-\_]*)\.html/gi, '$1.html'))
         .pipe(gulp.dest('public'));
 });
+
+gulp.task('build-img', function() {
+    gulp.src(['src/img/**/*'])
+        .pipe(gulp.dest('public/img'));
+})
 
 gulp.task('serve', function() {
     
@@ -48,7 +53,7 @@ gulp.task('serve', function() {
     });
     
     gulp.watch(['src/**/*.scss'], ['styles']);
-    gulp.watch(['src/**/*.html'], ['build']);
+    gulp.watch(['src/**/*.html'], ['build-html']);
     
     // fire reload when public files change
     gulp.watch(['public/*.html', 'public/*.css']).on('change', browserSync.reload);
@@ -58,7 +63,7 @@ gulp.task('serve', function() {
 gulp.task('development', ['serve']);
 
 //NODE_ENV=production
-gulp.task('production', ['del', 'styles', 'build']);
+gulp.task('production', ['del', 'styles', 'build-html', 'build-img']);
 
 gulp.task('default', 
     [ENV === 'production' ? 'production' : 'development']

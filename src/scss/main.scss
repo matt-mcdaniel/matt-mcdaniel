@@ -8,19 +8,17 @@
     height: 75vh;
     width: 100vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.flex-container-inner {
+.button-container {
     display: flex;
-    height: 400px;
-    width: 600px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     
-    @media (max-width: 600px) {
+    @media (max-width: $mobile) {
+        display: block;
         flex-direction: column;
         justify-content: center;
     }

@@ -18,36 +18,90 @@ h1, h2 {
   font-weight: 600; }
 
 header {
-  display: block;
-  text-align: center; }
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 40px; }
+  @media (max-width: 500px) {
+    header {
+      text-align: center;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column; } }
+
+.header__img {
+  padding: 35px;
+  width: 155px;
+  height: 155px; }
+
+.header__text {
+  border-top: 1px solid #E2E3DF;
+  border-bottom: 1px solid #E2E3DF;
+  height: 160px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  @media (max-width: 500px) {
+    .header__text {
+      -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      padding-top: 35px; } }
+
+.name {
+  margin-top: -6px; }
+
+.title {
+  margin-bottom: 20px; }
+  @media (max-width: 500px) {
+    .title {
+      margin-bottom: 35px;
+      font-size: 13px; } }
 
 .card {
-  display: block;
-  background-color: whitesmoke;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  width: 100%;
-  padding: 20px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding-right: 20px;
   text-align: center;
   color: white !important;
-  margin: 2px; }
-  @media (max-width: 600px) {
+  margin: 1px;
+  height: 30px;
+  background-image: url("img/retina_wood.png");
+  background-attachment: fixed; }
+  @media (max-width: 500px) {
     .card {
-      width: 200px; } }
+      height: 40px;
+      margin-bottom: 2px; } }
 
-.linkedin {
-  background-color: #069; }
-  .linkedin:hover {
-    background-color: #0077b3; }
+.card__icon {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 40px;
+  max-height: 60px; }
 
-.github {
-  background-color: #333; }
-  .github:hover {
-    background-color: #404040; }
-
-.codepen {
-  background-color: #333; }
-  .codepen:hover {
-    background-color: #404040; }
+.card__text {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-weight: bold;
+  font-size: 13px; }
 
 .flex-container-outer {
   height: 75vh;
@@ -55,6 +109,9 @@ header {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -62,23 +119,16 @@ header {
   -ms-flex-align: center;
   align-items: center; }
 
-.flex-container-inner {
+.button-container {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 400px;
-  width: 600px;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
-  @media (max-width: 600px) {
-    .flex-container-inner {
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+  @media (max-width: 500px) {
+    .button-container {
+      display: block;
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column;
