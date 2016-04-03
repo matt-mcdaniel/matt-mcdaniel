@@ -4,6 +4,7 @@ header {
     margin-bottom: 40px;
     
     @media (max-width: $mobile) {
+        display: block;
         text-align: center;
         flex-direction: column;
     }
@@ -33,7 +34,7 @@ header {
     margin-top: -6px;
     
     @media (max-width: $mobile) {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 }
 

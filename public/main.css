@@ -27,6 +27,7 @@ header {
   margin-bottom: 40px; }
   @media (max-width: 500px) {
     header {
+      display: block;
       text-align: center;
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
@@ -61,7 +62,7 @@ header {
   margin-top: -6px; }
   @media (max-width: 500px) {
     .name {
-      margin-bottom: 20px; } }
+      margin-bottom: 10px; } }
 
 .title {
   margin-bottom: 20px; }
