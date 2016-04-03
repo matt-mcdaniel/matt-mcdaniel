@@ -82,7 +82,7 @@ header {
   color: white !important;
   margin: 1px;
   height: 30px;
-  background-image: url("img/retina_wood.png");
+  background-image: url("img/dark_matter.png");
   background-attachment: fixed; }
   @media (max-width: 500px) {
     .card {
