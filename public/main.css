@@ -61,7 +61,7 @@ header {
   margin-top: -6px; }
   @media (max-width: 500px) {
     .name {
-      margin-bottom: 8px; } }
+      margin-bottom: 20px; } }
 
 .title {
   margin-bottom: 20px; }
