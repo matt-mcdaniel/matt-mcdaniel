@@ -31,6 +31,10 @@ header {
 
 .name {
     margin-top: -6px;
+    
+    @media (max-width: $mobile) {
+        margin-bottom: 8px;
+    }
 }
 
 .title {
