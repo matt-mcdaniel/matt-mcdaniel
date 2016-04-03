@@ -33,7 +33,6 @@ gulp.task('build-html', function() {
     
     gulp.src(['!src/templates/index.html', 'src/templates/*.html'])
         .pipe(include())
-        //.pipe(replace(/public\/([a-z1-9\-\_]*)\.html/gi, '$1.html'))
         .pipe(gulp.dest('public'));
         
     gulp.src('src/templates/index.html')
@@ -62,23 +61,6 @@ gulp.task('serve', function() {
         'public/*.css',
     ]).on('change', browserSync.reload);
 });
-
-// gulp.task('bundle-js', function() {
-//     jspm.bundle('src/js/main', 'public/main.bundle.js', {
-//         inject: true,
-//         mangle: true,
-//         minify: true,
-//         format: 'cjs'
-//     }).then(function() {
-//         console.log('JS bundle created.');
-//     }).catch(function(e) {
-//         console.log(e);
-//     });
-// });
-
-// gulp.task('unbundle-js', function() {
-//     jspm.unbundle();
-// });
 
 //NODE_ENV=development
 gulp.task('development', ['serve']);

@@ -17,8 +17,8 @@
     "jspm": "^0.16.32"
   },
   "scripts": {
-    "build": "NODE_ENV=production gulp && jspm bundle src/js/main public/main.bundle.js --inject",
-    "dev": "NODE_ENV=development jspm unbundle && gulp",
+    "build": "NODE_ENV=production gulp && jspm bundle-sfx src/js/main.js public/main.bundle.js",
+    "dev": "NODE_ENV=development gulp",
     "serve": "browser-sync start --server --files 'index.html, **/*.css, **/*.html'"
   },
   "repository": {
