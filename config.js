@@ -12,6 +12,13 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
+  bundles: {
+    "public/main.bundle.js": [
+      "src/js/main.js",
+      "npm:d3@3.5.16.js",
+      "npm:d3@3.5.16/d3.js"
+    ]
+  },
 
   map: {
     "babel": "npm:babel-core@5.8.38",
