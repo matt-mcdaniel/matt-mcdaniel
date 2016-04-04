@@ -54,18 +54,18 @@ gulp.task('serve', function() {
         ui: false
     });
     
-    //gulp.watch(['src/scss/*.scss'], ['styles']);
-    //gulp.watch(['src/**/*.html'], ['build-html', 'html-inject-dev']);
+    gulp.watch(['src/scss/*.scss'], ['styles']);
+    gulp.watch(['src/**/*.html'], ['build-html']);
     
     // fire reload when public files change
     gulp.watch([
-        'public/*.html', 
+        'public/**/*.html', 
         'public/*.css',
     ]).on('change', browserSync.reload);
 });
 
 //NODE_ENV=development
-gulp.task('development', ['build-html', 'styles', 'html-inject']);
+gulp.task('development', ['build-html', 'styles', 'html-inject', 'serve']);
 
 //NODE_ENV=production
 gulp.task('production', ['build-html', 'styles', 'html-inject']);

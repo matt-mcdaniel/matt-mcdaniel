@@ -7,12 +7,24 @@
 }
 
 body {
-    margin: 20px auto;
+    padding: 60px 80px;
     background-color: #fff;
+    
+    @media (max-width: $mobile) {
+        padding: 10px 20px;
+    }
 }
 
 a, a:visited {
     text-decoration: none;
+    color: $text;
+}
+
+p {
+    color: $text;
+}
+
+h1, h2, h3, h4, h5, h6 {
     color: $text;
 }
 
