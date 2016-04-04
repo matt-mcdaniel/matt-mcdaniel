@@ -14,8 +14,6 @@
     </head>
     <body>
 
-
-
     <div class="flex-container-outer">
         
         <header>
@@ -45,16 +43,16 @@
             </div>
 
         </header>
-        
-
+     
     </div>
-  
-  <!--<script src="jspm_packages/system.js"></script>
-  <script src="config.js"></script>
-  
-  <script>System.import('src/js/main')</script>-->
-  
-  <script src="public/main.bundle.js"></script>
-  
-  </body>
-  </html>
+      <!-- inject:dev -->
+      <script src="/jspm_packages/system.js"></script>
+      <script src="/config.js"></script>
+      <script src="/src/js/entry.js"></script>
+      <!-- endinject:dev -->    
+      
+      <!-- inject:prod -->
+      <!-- endinject:prod -->
+      
+      </body>
+      </html>

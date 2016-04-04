@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var include = require('gulp-include');
 var del = require('del');
-var replace = require('gulp-replace');
 var debug = require('gulp-debug');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
@@ -11,9 +10,11 @@ var jspm = require('jspm');
 
 var ENV = process.env.NODE_ENV;
 
+require('./gulp/html-inject.js')(ENV, gulp);
+
 // delete build folder
 gulp.task('del', function() {
-    del('public/');
+    del.sync('build');
 });
 
 // build public/main.css
@@ -29,15 +30,16 @@ gulp.task('styles', function() {
 });
 
 // build src/**/*.html into public/*.html
-gulp.task('build-html', function() {
+gulp.task('build-html', ['del'], function() {
+    
+    gulp.src('src/templates/index.html')
+        .pipe(include())
+        .pipe(gulp.dest('.'));
     
     gulp.src(['!src/templates/index.html', 'src/templates/*.html'])
         .pipe(include())
         .pipe(gulp.dest('public'));
         
-    gulp.src('src/templates/index.html')
-        .pipe(include())
-        .pipe(gulp.dest('.'));
 });
 
 gulp.task('serve', function() {
@@ -52,8 +54,8 @@ gulp.task('serve', function() {
         ui: false
     });
     
-    gulp.watch(['src/scss/*.scss'], ['styles']);
-    gulp.watch(['src/**/*.html'], ['build-html']);
+    //gulp.watch(['src/scss/*.scss'], ['styles']);
+    //gulp.watch(['src/**/*.html'], ['build-html', 'html-inject-dev']);
     
     // fire reload when public files change
     gulp.watch([
@@ -63,11 +65,11 @@ gulp.task('serve', function() {
 });
 
 //NODE_ENV=development
-gulp.task('development', ['serve']);
+gulp.task('development', ['build-html', 'styles', 'html-inject']);
 
 //NODE_ENV=production
-gulp.task('production', ['del', 'styles', 'build-html']);
+gulp.task('production', ['build-html', 'styles', 'html-inject']);
 
 gulp.task('default', 
-    [ENV === 'production' ? 'production' : 'development']
+    [ENV === 'prod' ? 'production' : 'development']
 );
