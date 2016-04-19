@@ -1,0 +1,10 @@
+code
+.code__comment,
+{
+    font-family: $mono;
+}
+
+.code__comment {
+    color: lighten(#a0a0a0, 25%);
+    font-weight: 700;
+}
