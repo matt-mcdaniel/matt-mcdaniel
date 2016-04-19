@@ -1,51 +1,51 @@
 {
-  "name": "matt-mcdaniel",
+  "name": "sensutec_com",
   "version": "1.0.0",
-  "description": "Matt McDaniel Home Page",
-  "main": "src/main.js",
+  "description": "Sensutec Home Page",
+  "main": "/",
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.11.2",
-    "del": "^2.2.0",
+    "chokidar-socket-emitter": "^0.5.1",
+    "express": "^4.13.4",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
-    "gulp-debug": "^2.1.2",
-    "gulp-delete-lines": "0.0.7",
-    "gulp-include": "^2.1.0",
-    "gulp-inject": "^4.0.0",
     "gulp-sass": "^2.2.0",
-    "gulp-watch": "^4.3.5",
-    "jspm": "^0.16.32"
+    "jspm": "^0.16.32",
+    "react-router": "^2.0.1"
   },
   "scripts": {
-    "build": "NODE_ENV=prod gulp && jspm bundle-sfx src/js/main.js public/main.bundle.js",
-    "dev": "NODE_ENV=dev gulp",
-    "serve": "browser-sync start --server --files 'index.html, **/*.css, **/*.html'",
-    "gulp-dev": "NODE_ENV=dev gulp",
-    "gulp-prod": "NODE_ENV=prod gulp",
-    "gulp-del": "gulp del",
-    "gulp-inject-dev": "NODE_ENV=dev gulp html-inject",
-    "gulp-inject-prod": "NODE_ENV=prod gulp html-inject"
+    "start": "NODE_ENV=prod node server.js",
+    "build": "NODE_ENV=prod gulp && jspm bundle-sfx app/main.js public/app.js --minify",
+    "dev": "NODE_ENV=dev gulp"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/matt-mcdaniel/matt-mcdaniel.git"
+    "url": "git+https://github.com/sensutec/sensutec_com.git"
   },
   "keywords": [
-    "matt",
-    "mcdaniel"
+    "sensutec"
   ],
-  "author": "Matt McDaniel",
+  "author": "Sensutec LLC",
   "license": "MIT",
-  "homepage": "http://www.matt-mcdaniel.com",
+  "bugs": {
+    "url": "https://github.com/sensutec/sensutec_com/issues"
+  },
+  "homepage": "https://github.com/sensutec/sensutec_com#readme",
   "jspm": {
+    "configFile": "jspm.config.js",
     "dependencies": {
-      "d3": "npm:d3@^3.5.16"
+      "express": "npm:express@^4.13.4",
+      "react": "npm:react@^15.0.0",
+      "react-dom": "npm:react-dom@^15.0.0",
+      "react-router": "npm:react-router@^2.0.1",
+      "scss": "github:KevCJones/plugin-scss@^0.2.6"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
       "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^1.1.4"
+      "core-js": "npm:core-js@^1.1.4",
+      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.5.6"
     }
   }
 }

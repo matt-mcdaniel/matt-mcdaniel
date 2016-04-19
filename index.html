@@ -1,51 +1,23 @@
 <!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Matt McDaniel</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--<link rel="apple-touch-icon" href="apple-touch-icon.png">-->
-        <!-- Place favicon.ico in the root directory -->
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="public/main.css">
+</head>
 
-        <link rel="stylesheet" href="public/main.css">
-    </head>
-    <body>
+<body>
 
-    <header class="header-flex">
-        <img class="header__img" src="assets/img/me.png">
-        <div class="header-flex-text">
-            <h2 class="name">Matt McDaniel</h2>
-            <h3 class="title">JavaScript Developer</h3>
-            <div class="social-container">
-                
-                <a class="social linkedin" href="https://www.linkedin.com/in/matthmcdaniel">
-                    <img class="social__icon" src="assets/img/linkedin-icon.svg">
-                    <p class="social__text">LinkedIn</p>
-                </a>
-            
-                <a class="social github" href="https://github.com/matt-mcdaniel">
-                    <img class="social__icon" src="assets/img/github-icon.svg">
-                    <p class="social__text">Github</p>
-                </a>
-            
-                <a class="social codepen" href="http://codepen.io/himmel/">
-                    <img class="social__icon" src="assets/img/codepen-icon.svg">
-                    <p class="social__text">Codepen</p>
-                </a>
-            
-            </div>
-        </div>
-    </header>
+	<div id="app"></div>
 
-<!-- inject:dev -->
-<!-- endinject:dev -->    
-
-<!-- inject:prod -->
-<script src="public/main.bundle.js"></script>
-<!-- endinject:prod -->
+	<script src="jspm_packages/system.js"></script>
+	<script src="jspm.config.js"></script>
+	<script>
+        System.trace = true
+        System.import('systemjs-hot-reloader').then(function(HotReloader){
+            new HotReloader.default('http://localhost:8090');
+            System.import('app/main')
+        });
+	</script>
 
 </body>
 </html>
