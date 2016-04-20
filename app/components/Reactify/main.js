@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import CodeMirror from './codemirror';
 
 class Reactify extends React.Component {
     constructor() {
         super();
         this.state = {
-            input: '<input class="test" for="testing" />',
+            input: '',
             output: '',
             err: '',
             started: false
@@ -30,9 +31,10 @@ class Reactify extends React.Component {
     }
     
     update(e) {
+        console.log('change!');
         try {
             this.setState({ 
-                output: ReactDOM.findDOMNode(this.refs.inp).value
+                output: ReactDOM.findDOMNode(this.refs.input).value
             });
         }
         catch(err){
@@ -41,25 +43,52 @@ class Reactify extends React.Component {
     }
     
     render() {
+        
+        console.log(CodeMirror);
         return (
             <div className="reactify">
-                <h1 className="reactify__title">Reactify</h1>
                 <textarea
-                    ref="inp"
                     className="reactify__input"
+                    id="input"
+                    ref="input"
                     onClick={this.handleClick}
                     onChange={this.update}
-                    defaultValue={this.state.input}>
+                    >
                 </textarea>
-                <pre className="reactify__preview">
-                    <code>
-                        <span className="code__comment">
-                        {'/* JavaScript Output */'}</span>
-                        {this.state.output}
-                    </code>
-                </pre>
+                <textarea 
+                    className="reactify__output"
+                    id="output"
+                    value={this.state.input}
+                    >
+                </textarea>
             </div>
-        );
+        )
+    }
+    
+    componentDidMount() {
+        
+        CodeMirror.fromTextArea(document.getElementById('input'), {
+            theme: 'mdn-like',
+            lineNumbers: true,
+            mode: 'xml',
+            value: 'test'
+        });
+        
+        CodeMirror.fromTextArea(document.getElementById('output'), {
+            theme: 'mdn-like',
+            lineNumbers: true,
+            mode: 'xml',
+            value: 'test',
+            readOnly: true
+        });
+        
+        function setState() {
+            this.setState({
+                output: ReactDOM.findDOMNode(this.refs.input).value
+            });
+        }
+        
+        setInterval(200, setState)
     }
 
 }

@@ -1,10 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,600);
-@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);
 @import 'variables';
 @import 'base';
 @import 'header';
 @import 'social';
 @import 'code';
+@import 'codemirror';
+@import 'codemirror-mdn-like';
 
 // subcomponents
 @import '../components/Reactify/main';
