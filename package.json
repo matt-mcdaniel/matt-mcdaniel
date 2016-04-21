@@ -1,7 +1,7 @@
 {
-  "name": "sensutec_com",
+  "name": "mattmac.io",
   "version": "1.0.0",
-  "description": "Sensutec Home Page",
+  "description": "Matt McDaniel",
   "main": "/",
   "dependencies": {},
   "devDependencies": {
@@ -21,17 +21,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sensutec/sensutec_com.git"
+    "url": "git+https://github.com/matt-mcdaniel/mattmac-io.git"
   },
   "keywords": [
-    "sensutec"
+    "matt",
+    "mcdaniel"
   ],
-  "author": "Sensutec LLC",
+  "author": "Matt McDaniel",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sensutec/sensutec_com/issues"
+    "url": "https://github.com/matt-mcdaniel/mattmac-io/issues"
   },
-  "homepage": "https://github.com/sensutec/sensutec_com#readme",
+  "homepage": "https://github.com/matt-mcdaniel/mattmac-io#readme",
   "jspm": {
     "configFile": "jspm.config.js",
     "dependencies": {

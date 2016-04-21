@@ -25,13 +25,10 @@ class Reactify extends React.Component {
     }
     
     transform(html) {
-        console.log('transform');
-        console.log(html);
         return html.split(' ').join('');
     }
     
     update(e) {
-        console.log('change!');
         try {
             this.setState({ 
                 output: ReactDOM.findDOMNode(this.refs.input).value
@@ -43,8 +40,7 @@ class Reactify extends React.Component {
     }
     
     render() {
-        
-        console.log(CodeMirror);
+
         return (
             <div className="reactify">
                 <textarea
