@@ -7,9 +7,7 @@
 @import 'code';
 @import 'codemirror';
 @import 'codemirror-mdn-like';
-
-// subcomponents
-@import '../components/Reactify/main';
+@import '../components/code/code';
 
 .header-flex {
     display: flex;

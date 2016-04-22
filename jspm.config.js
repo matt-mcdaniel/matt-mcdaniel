@@ -9,17 +9,24 @@ System.config({
   },
   paths: {
     "github:*": "jspm_packages/github/*",
-    "npm:*": "jspm_packages/npm/*"
+    "npm:*": "jspm_packages/npm/*",
+    "lib:*": "app/lib/CodeMirror/*"
   },
 
   map: {
+    "CodeMirror": "lib:CodeMirror",
+    "xml": "lib:xml.js",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "core-js": "npm:core-js@1.2.6",
     "express": "npm:express@4.13.4",
     "react": "npm:react@15.0.1",
     "react-dom": "npm:react-dom@15.0.1",
+    "react-redux": "npm:react-redux@4.4.5",
     "react-router": "npm:react-router@2.3.0",
+    "redux": "npm:redux@3.5.1",
+    "redux-logger": "npm:redux-logger@2.6.1",
+    "redux-thunk": "npm:redux-thunk@2.0.1",
     "scss": "github:KevCJones/plugin-scss@0.2.10",
     "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.5.7",
     "github:KevCJones/plugin-scss@0.2.10": {
@@ -146,7 +153,7 @@ System.config({
       "postcss": "npm:postcss@5.0.19",
       "postcss-value-parser": "npm:postcss-value-parser@3.3.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+      "systemjs-json": "github:systemjs/plugin-json@0.1.1"
     },
     "npm:babel-plugin-syntax-flow@6.5.0": {
       "babel-runtime": "npm:babel-runtime@5.8.38"
@@ -166,7 +173,7 @@ System.config({
       "evp_bytestokey": "npm:evp_bytestokey@1.0.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "inherits": "npm:inherits@2.0.1",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+      "systemjs-json": "github:systemjs/plugin-json@0.1.1"
     },
     "npm:browserify-cipher@1.0.0": {
       "browserify-aes": "npm:browserify-aes@1.0.6",
@@ -214,11 +221,11 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+      "systemjs-json": "github:systemjs/plugin-json@0.1.1"
     },
     "npm:buffer-xor@1.0.3": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+      "systemjs-json": "github:systemjs/plugin-json@0.1.1"
     },
     "npm:buffer@3.6.0": {
       "base64-js": "npm:base64-js@0.0.8",
@@ -235,7 +242,7 @@ System.config({
       "string_decoder": "github:jspm/nodelibs-string_decoder@0.1.0"
     },
     "npm:constants-browserify@0.0.1": {
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+      "systemjs-json": "github:systemjs/plugin-json@0.1.1"
     },
     "npm:content-disposition@0.5.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -248,7 +255,7 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+      "systemjs-json": "github:systemjs/plugin-json@0.1.1"
     },
     "npm:core-util-is@1.0.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
@@ -316,7 +323,7 @@ System.config({
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "miller-rabin": "npm:miller-rabin@4.0.0",
       "randombytes": "npm:randombytes@2.0.3",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+      "systemjs-json": "github:systemjs/plugin-json@0.1.1"
     },
     "npm:domain-browser@1.1.7": {
       "events": "github:jspm/nodelibs-events@0.1.1"
@@ -326,7 +333,7 @@ System.config({
       "brorand": "npm:brorand@1.0.5",
       "hash.js": "npm:hash.js@1.0.3",
       "inherits": "npm:inherits@2.0.1",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+      "systemjs-json": "github:systemjs/plugin-json@0.1.1"
     },
     "npm:encoding@0.1.12": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -427,7 +434,7 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "stream": "github:jspm/nodelibs-stream@0.1.0",
       "string_decoder": "github:jspm/nodelibs-string_decoder@0.1.0",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+      "systemjs-json": "github:systemjs/plugin-json@0.1.1"
     },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
@@ -464,7 +471,7 @@ System.config({
       "brorand": "npm:brorand@1.0.5"
     },
     "npm:mime-db@1.22.0": {
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+      "systemjs-json": "github:systemjs/plugin-json@0.1.1"
     },
     "npm:mime-types@2.1.10": {
       "mime-db": "npm:mime-db@1.22.0",
@@ -475,7 +482,7 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+      "systemjs-json": "github:systemjs/plugin-json@0.1.1"
     },
     "npm:node-fetch@1.5.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -506,7 +513,7 @@ System.config({
       "create-hash": "npm:create-hash@1.1.2",
       "evp_bytestokey": "npm:evp_bytestokey@1.0.0",
       "pbkdf2": "npm:pbkdf2@3.0.4",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+      "systemjs-json": "github:systemjs/plugin-json@0.1.1"
     },
     "npm:parseurl@1.3.1": {
       "url": "github:jspm/nodelibs-url@0.1.0"
@@ -521,7 +528,7 @@ System.config({
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+      "systemjs-json": "github:systemjs/plugin-json@0.1.1"
     },
     "npm:postcss@5.0.19": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
@@ -568,6 +575,15 @@ System.config({
     "npm:react-dom@15.0.1": {
       "react": "npm:react@15.0.1"
     },
+    "npm:react-redux@4.4.5": {
+      "hoist-non-react-statics": "npm:hoist-non-react-statics@1.0.5",
+      "invariant": "npm:invariant@2.2.1",
+      "lodash": "npm:lodash@4.11.1",
+      "loose-envify": "npm:loose-envify@1.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "react": "npm:react@15.0.1",
+      "redux": "npm:redux@3.5.1"
+    },
     "npm:react-router@2.3.0": {
       "history": "npm:history@2.0.2",
       "invariant": "npm:invariant@2.2.1",
@@ -612,6 +628,13 @@ System.config({
       "private": "npm:private@0.1.6",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "source-map": "npm:source-map@0.5.3"
+    },
+    "npm:redux@3.5.1": {
+      "lodash": "npm:lodash@4.11.1",
+      "lodash-es": "npm:lodash-es@4.11.1",
+      "loose-envify": "npm:loose-envify@1.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "symbol-observable": "npm:symbol-observable@0.2.2"
     },
     "npm:ripemd160@1.0.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -661,7 +684,7 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:statuses@1.2.1": {
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+      "systemjs-json": "github:systemjs/plugin-json@0.1.1"
     },
     "npm:stream-browserify@1.0.0": {
       "events": "github:jspm/nodelibs-events@0.1.1",
@@ -689,7 +712,7 @@ System.config({
       "mime-types": "npm:mime-types@2.1.10"
     },
     "npm:ua-parser-js@0.7.10": {
-      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
+      "systemjs-json": "github:systemjs/plugin-json@0.1.1"
     },
     "npm:unreachable-branch-transform@0.5.1": {
       "esmangle-evaluator": "npm:esmangle-evaluator@1.0.0",

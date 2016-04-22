@@ -1,5 +1,5 @@
 import React from 'react';
-import Social from './Social';
+import Social from '../social/Social';
 
 class Header extends React.Component {
     render(){

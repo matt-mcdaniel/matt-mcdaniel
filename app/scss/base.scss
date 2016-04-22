@@ -8,6 +8,8 @@
 body {
     padding: 60px 80px;
     background-color: #fff;
+    font-family: 'Open Sans';
+    color: $text;
     
     @media (max-width: $mobile) {
         padding: 10px 20px;
@@ -16,18 +18,15 @@ body {
 
 a, a:visited {
     text-decoration: none;
-    color: $text;
-    font-family: 'Open Sans';
+    
 }
 
 p {
-    color: $text;
-    font-family: 'Open Sans';
+    
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: $text;
-    font-family: 'Open Sans';
 }
 
 h1, h2 {
