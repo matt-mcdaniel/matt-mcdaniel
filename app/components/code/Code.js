@@ -1,13 +1,15 @@
 import React from 'react';
 import CodeMirror from 'react-codemirror';
 import 'codemirror/mode/xml/xml';
+import 'codemirror/mode/javascript/javascript';
+import 'codemirror/mode/css/css';
+import 'codemirror/mode/jsx/jsx';
 
 class Code extends React.Component {
     constructor(props){
         super(props);
         
         this.handleClick = this.handleClick.bind(this);
-        this.handleFocus = this.handleFocus.bind(this);
     }
     
     handleClick(obj){
@@ -55,11 +57,6 @@ class Code extends React.Component {
             )
         }
     }
-    
-    handleFocus(){
-        console.log(arguments);
-    }
-   
     
 
 }

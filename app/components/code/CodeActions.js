@@ -16,8 +16,6 @@ export function getLib(obj) {
     
     return dispatch => {
         
-        console.log(store.getState());
-        
         dispatch({ 
             type: REQUEST_LIB,
             name: obj.name

@@ -10,5 +10,8 @@ const loggerMiddleware = createLogger({
 
 export default createStore(
     reducers,
-    applyMiddleware(thunk, loggerMiddleware)
+    applyMiddleware(
+        thunk, 
+        //loggerMiddleware
+    )
 )

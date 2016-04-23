@@ -30,7 +30,6 @@ export default function code(state = {
         }
     ]
 }, action) {
-    console.log('action', action);
     switch(action.type) {
         case REQUEST_LIB:
             return Object.assign({}, state, {
