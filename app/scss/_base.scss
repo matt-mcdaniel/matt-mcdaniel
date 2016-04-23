@@ -5,6 +5,10 @@
     font-weight: 300;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     padding: 60px 80px;
     background-color: #fff;
@@ -18,7 +22,7 @@ body {
 
 a, a:visited {
     text-decoration: none;
-    
+    color: $text;
 }
 
 p {

@@ -48,10 +48,9 @@ gulp.task('serve', ['styles'], function() {
         }
     });
     
-    gulp.watch(['app/scss/main.scss', 'app/scss/*.scss', 'app/components/**/*.scss'], ['styles'], function() {
+    gulp.watch(['app/scss/main.scss', 'app/scss/**/*.scss', 'app/components/**/*.scss'], ['styles'], function() {
         browserSync.reload;
     });
-    // gulp.watch('app/**/*.js').on('change', browserSync.reload);
     
 });
 
@@ -62,5 +61,5 @@ gulp.task('development', ['serve']);
 gulp.task('production', ['styles']);
 
 gulp.task('default', 
-    [ENV === 'prod' ? 'production' : 'development']
+    [ENV === 'production' ? 'production' : 'development']
 );

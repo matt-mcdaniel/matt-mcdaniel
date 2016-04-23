@@ -1,0 +1,25 @@
+.feature {
+    display: block;
+    padding: 15px 20px 20px 40px;
+    border-left: 4px solid #cecece;
+}
+
+.feature__title {
+    display: inline-block;
+    margin-bottom: 5px;
+    
+}
+
+.feature__description {
+    font-size: 18px;
+}
+
+.feature:hover {
+    transition: border-left 0.08s ease-in;
+    border-left: 4px solid $blue;
+    
+    .feature__title {
+        transition: color 0.08s ease-in;
+        color: darken($blue, 10%);
+    }
+}

@@ -9,18 +9,17 @@ System.config({
   },
   paths: {
     "github:*": "jspm_packages/github/*",
-    "npm:*": "jspm_packages/npm/*",
-    "lib:*": "app/lib/CodeMirror/*"
+    "npm:*": "jspm_packages/npm/*"
   },
 
   map: {
-    "CodeMirror": "lib:CodeMirror",
-    "xml": "lib:xml.js",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
+    "codemirror": "npm:codemirror@5.14.2",
     "core-js": "npm:core-js@1.2.6",
     "express": "npm:express@4.13.4",
     "react": "npm:react@15.0.1",
+    "react-codemirror": "npm:react-codemirror@0.2.6",
     "react-dom": "npm:react-dom@15.0.1",
     "react-redux": "npm:react-redux@4.4.5",
     "react-router": "npm:react-router@2.3.0",
@@ -456,6 +455,9 @@ System.config({
     "npm:js-base64@2.1.9": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
     },
+    "npm:lodash.debounce@4.0.6": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:lodash@4.11.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
@@ -572,6 +574,13 @@ System.config({
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
+    "npm:react-codemirror@0.2.6": {
+      "classnames": "npm:classnames@2.2.3",
+      "codemirror": "npm:codemirror@5.14.2",
+      "lodash.debounce": "npm:lodash.debounce@4.0.6",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "react": "npm:react@15.0.1"
+    },
     "npm:react-dom@15.0.1": {
       "react": "npm:react@15.0.1"
     },
@@ -627,7 +636,7 @@ System.config({
       "os": "github:jspm/nodelibs-os@0.1.0",
       "private": "npm:private@0.1.6",
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "source-map": "npm:source-map@0.5.3"
+      "source-map": "npm:source-map@0.5.4"
     },
     "npm:redux@3.5.1": {
       "lodash": "npm:lodash@4.11.1",
@@ -681,6 +690,9 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:source-map@0.5.3": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:source-map@0.5.4": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:statuses@1.2.1": {

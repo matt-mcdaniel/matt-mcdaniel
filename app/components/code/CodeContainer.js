@@ -1,18 +1,27 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Code from './Code';
+import {getLib, setActiveLanguage} from './CodeActions';
+import store from '../../config/store';
 
 const mapStateToProps = ({ code }) => {
     return {
-        lib: code.lib,
         languages: code.languages,
-        loading: code.loading
+        loading: code.loading,
+        active: code.active
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {   
     return {
-        dispatch
+        getLib: (obj) => {
+            if (!obj.active){
+                dispatch(getLib(obj));
+            }
+        },
+        setActiveLanguage: (str) => {
+            dispatch(setActiveLanguage(str));   
+        }
     }
 }
 

@@ -1,32 +1,31 @@
 import React from 'react';
-import {requestLib} from '../../actions/code';
-import CodeMirror from 'CodeMirror';
+import CodeMirror from 'react-codemirror';
+import 'codemirror/mode/xml/xml';
 
 class Code extends React.Component {
     constructor(props){
         super(props);
         
         this.handleClick = this.handleClick.bind(this);
-        this.activeFilename = this.props.languages.reduce((acc, cur) => {
-            if (cur.active) acc = cur.filename;
-            return acc;
-        },'');
+        this.handleFocus = this.handleFocus.bind(this);
     }
     
-    handleClick(str){
-        console.log('_handleClick:', str);
+    handleClick(obj){
+        this.props.getLib(obj);
     }
     
     componentWillMount(){
-        this.props.dispatch(requestLib(this.activeFilename));
+        this.props.setActiveLanguage(this.props.active);
     }
     
     render(){
+        let activeObj = this.props.languages.filter((d) => d.name === this.props.active)[0];
+
         if (!this.props.loading) {
             return (
                 <div className="code">
                     <ul className="code-chooser">
-                    {this.props.languages.map((language, i) => {
+                    {this.props.languages.map(function(language, i) {
                         let className = language.active ? ' active' : '';
                         return (
                             <li key={i} className="code-chooser__option">
@@ -40,8 +39,13 @@ class Code extends React.Component {
                     }.bind(this))}
                     </ul>
                     <div className="code-mirror full">
-                        <textarea id="code">
-                        </textarea>
+                        <CodeMirror options={{
+                            theme: 'mdn-like',
+                            lineNumbers: true,
+                            mode: activeObj.filename,
+                            tabSize: 3
+                        }} />
+                        
                     </div>
                 </div>
             )
@@ -51,23 +55,13 @@ class Code extends React.Component {
             )
         }
     }
-    componentDidMount(){
-        console.log('CM', CodeMirror);
-        this.props.dispatch({
-            type: 'RECEIVE_LIB',
-            lib: this.props.lib(CodeMirror)
-        });
-        //const CodeMirror = this.props.lib;
-        //console.log(typeof CodeMirror, console.log(CodeMirror));
-        
-        /*
-        CodeMirror.fromTextArea(document.getElementById('code'), {
-            theme: 'mdn-like',
-            lineNumbers: true,
-            mode: 'xml'
-        });
-        */
+    
+    handleFocus(){
+        console.log(arguments);
     }
+   
+    
+
 }
 
 export default Code;
