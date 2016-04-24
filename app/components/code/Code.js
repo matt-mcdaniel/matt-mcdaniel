@@ -13,7 +13,8 @@ class Code extends React.Component {
     }
     
     handleClick(obj){
-        this.props.getLib(obj);
+        this.props.setActiveLanguage(obj.name);
+        //this.props.getLib(obj);
     }
     
     componentWillMount(){
@@ -45,7 +46,9 @@ class Code extends React.Component {
                             theme: 'mdn-like',
                             lineNumbers: true,
                             mode: activeObj.filename,
-                            tabSize: 3
+                            tabSize: 3,
+                            onChange: this.onChange,
+                            onFocusChange: this.onFocusChange
                         }} />
                         
                     </div>
