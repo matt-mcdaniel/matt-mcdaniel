@@ -15,8 +15,11 @@ const mapStateToProps = ({ code }) => {
 const mapDispatchToProps = (dispatch) => {   
     return {
         getLib: (obj) => {
-            if (!obj.active){
+            if (!obj.active && window.hasOwnProperty('System')) {
+                console.log(window['System']);
                 dispatch(getLib(obj));
+            } else {
+                dispatch(setActiveLanguage(obj.name));
             }
         },
         setActiveLanguage: (str) => {
