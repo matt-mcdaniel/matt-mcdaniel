@@ -1,6 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,400italic);
 
 $orange: #ffb453;
+$blue: #3498DB;
+
+.CodeMirror-sizer {
+    padding-top: 55px;
+}
 
 .code-mirror.full {
     .cm-s-mdn-like.CodeMirror {
@@ -12,14 +17,22 @@ $orange: #ffb453;
     }
 }
 
+.ReactCodeMirror--focused .CodeMirror-gutters {
+    transition: border-left 0.1s ease-in;
+    border-left: 3px solid $blue;
+}
+
 .code-chooser {
-    margin-bottom: -1px;
+    margin-bottom: -40px;
+    position: relative;
+    z-index: 100;
     font-family: 'Lato';
     width: 100%;
     display: flex;
     height: 40px;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    padding-left: 36px;
 }
 
 .code-chooser__option {
@@ -35,38 +48,26 @@ $orange: #ffb453;
 }
 
 .code-chooser__button {
+    width: 90px;
     position: relative;
     padding: 10px;
-    border-top: 1px solid #e8e8e8;
-    border-left: 1px solid #e8e8e8;
-    width: 90px;
     color: rgba(150,150,150,0.4);
     cursor: pointer;
-    box-shadow: inset 0 0 1px rgba(0,0,0,0.2);
-    background-color: #f0f0f0;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
     
-    &:before {
-        content: ' ';
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        display: block;
-        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 85%, rgba(255, 255, 255, 0) 100%);
-        opacity: 1;
+    @media (max-width: $mobile){
+        width: 55px;
     }
     
     &.active > .code-chooser__text {
-        color: $orange;
+        color: $blue;
     }
     
     &:active {
         box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
         .code-chooser__text {
-            color: darken($orange, 10%);
+            color: darken($blue, 10%);
         }
         
         &:before {
@@ -79,8 +80,12 @@ $orange: #ffb453;
 .code-chooser__text {
     position: relative;
     text-shadow: inset 1px 2px 2px #000, 0 0 0 #fff, 1px 2px 2px #000;
-    font-size: 14px;
     font-weight: bold;
+    font-size: 14px;
+    
+    @media (max-width: $mobile){
+        font-size: 12px;
+    }
 }
 
 

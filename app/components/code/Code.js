@@ -10,11 +10,22 @@ class Code extends React.Component {
         super(props);
         
         this.handleClick = this.handleClick.bind(this);
+        this.onChange = this.onChange.bind(this);
+        this.state = {
+            focus: false
+        }
     }
     
     handleClick(obj){
         this.props.setActiveLanguage(obj.name);
-        //this.props.getLib(obj);
+    }
+    
+    onChange(e){
+        console.log(e);
+    }
+    
+    onFocusChange(){
+        console.log('args:', arguments, this.refs);
     }
     
     componentWillMount(){
@@ -23,6 +34,7 @@ class Code extends React.Component {
     
     render(){
         let activeObj = this.props.languages.filter((d) => d.name === this.props.active)[0];
+        let isFocused = this.state.focus;
 
         if (!this.props.loading) {
             return (
@@ -42,14 +54,18 @@ class Code extends React.Component {
                     }.bind(this))}
                     </ul>
                     <div className="code-mirror full">
-                        <CodeMirror options={{
-                            theme: 'mdn-like',
-                            lineNumbers: true,
-                            mode: activeObj.filename,
-                            tabSize: 3,
-                            onChange: this.onChange,
-                            onFocusChange: this.onFocusChange
-                        }} />
+                        <CodeMirror
+                            ref="codirror"
+                            className={isFocused ? 'active': ''}
+                            options={{
+                                theme: 'mdn-like',
+                                lineNumbers: true,
+                                mode: activeObj.filename,
+                                tabSize: 3,
+                            }}
+                            onChange={this.onChange}
+                            onFocusChange={this.onFocusChange} 
+                            />
                         
                     </div>
                 </div>

@@ -19,13 +19,8 @@ export default function code(state = {
             active: false
         },
         {
-            name: 'HTML',
-            filename: 'xml',
-            active: false
-        },
-        {
-            name: 'CSS',
-            filename: 'css',
+            name: 'Python',
+            filename: 'python',
             active: false
         }
     ]
