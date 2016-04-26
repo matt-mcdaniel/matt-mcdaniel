@@ -9,7 +9,6 @@ class Header extends React.Component {
                 <div className="header-flex-text">
                     <h2 className="name">Matt McDaniel</h2>
                     <h3 className="title">JavaScript Developer</h3>
-                    
                     <Social />
                 </div>
             </header>

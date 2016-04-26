@@ -10,14 +10,17 @@ html, body {
 }
 
 body {
-    padding: 60px 80px;
+    padding: 0;
     background-color: #fff;
     font-family: 'Open Sans';
     color: $text;
-    
-    @media (max-width: $mobile) {
-        padding: 10px 20px;
-    }
+}
+
+.app {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -40px;
 }
 
 a, a:visited {
@@ -26,7 +29,7 @@ a, a:visited {
 }
 
 p {
-    
+    margin-bottom: 10px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,4 +38,27 @@ h1, h2, h3, h4, h5, h6 {
 
 h1, h2 {
     font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.max-width-container {
+    margin: 0 auto auto 3em;
+    max-width: 32em;
+    
+    @media (max-width: $mobile) {
+        max-width: none;
+        margin-left: 0;
+    }
+}
+
+.subpage-container {
+    @extend .max-width-container;
+    
+    padding: 50px 60px;
+    
+    @media (max-width: $mobile) {
+        padding: 20px;
+        max-width: none;
+        margin-left: 0;
+    }
 }

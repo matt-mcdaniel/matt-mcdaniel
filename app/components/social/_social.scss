@@ -1,8 +1,8 @@
 .social-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     max-width: 335px;
-    margin-left: -1px;
+    margin-left: -13px;
     
     @media (max-width: $mobile) {
         display: block;
@@ -16,18 +16,11 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-right: 20px;
     text-align: center;
-    color: white !important;
+    color: $primary !important;
     margin: 1px;
     height: 30px;
-    background-color: #cecece;
     transition: all 0.2s ease;
-    
-    &:hover {
-        transition: background-color 0.2s ease;
-        background-color: #a0a0a0;
-    }
     
     @media (max-width: $mobile) {
         height: 50px;
@@ -39,16 +32,26 @@
 }
 
 .linkedin {
-
+    fill: dodgerblue;
+    
+    img {
+        margin-top: -4px;
+    }
 }
 
 
 .github {
+    img {
+        margin-top: -3px;
+    }
 
 }
 
 
 .codepen {
+    img {
+        margin-top: -3px;
+    }
 
 }
 
@@ -62,5 +65,7 @@
     flex: 1;
     font-weight: bold;
     font-size: 13px;
-    color: white;
+    color: dodgerblue;
+    margin-bottom: 0;
+    margin-left: -6px;
 }

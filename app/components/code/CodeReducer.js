@@ -19,8 +19,13 @@ export default function code(state = {
             active: false
         },
         {
-            name: 'Python',
-            filename: 'python',
+            name: 'HTML',
+            filename: 'xml',
+            active: false
+        },
+        {
+            name: 'Sass',
+            filename: 'sass',
             active: false
         }
     ]
