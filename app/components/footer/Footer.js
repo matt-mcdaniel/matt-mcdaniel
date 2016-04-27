@@ -11,7 +11,7 @@ class Footer extends React.Component {
                     </Link>
                 </div>
                 <div className="footer__middle-row">
-                    <Link to="/about" className="footer__link">
+                    <Link to="https://github.com/matt-mcdaniel/mattmac-io" className="footer__link">
                         View this page's repository
                     </Link>
                 </div>

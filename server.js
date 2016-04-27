@@ -14,7 +14,7 @@ app.use(express.static(__dirname + '/'));
 
 app.listen(port, function (error) {
     if (!error) {
-        console.log('Listening on port ' + port + '. In ' + env + ' mode.');
+        console.log('Listening on port ' + port + ' in ' + env + ' mode.');
     } else {
         console.error(error);
     }
