@@ -1,11 +1,37 @@
 footer {
-    height: 35px;
+    height: 100px;
     background-color: dodgerblue;
     text-align: center;
-    padding-top: 9px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.footer__link {
+.footer__link, .footer__link:visited {
     font-weight: bold;
     color: #fff;
+}
+
+.footer__top-row, .footer__middle-row, .footer__bottom-row {
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    color: #fff;
+}
+
+.footer__top-row {
+    background-color: #6AB6FF;
+    font-size: 12px;
+}
+
+.footer__middle-row {
+    background-color: dodgerblue;
+    font-size: 12px;
+}
+
+.footer__bottom-row {
+    background-color: #035CB2;
+    font-size: 11px;
 }

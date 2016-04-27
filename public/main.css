@@ -37,6 +37,10 @@ h1, h2 {
   margin-bottom: 20px; }
 
 .max-width-container, .subpage-container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -100px;
   margin: 0 auto auto 3em;
   max-width: 32em; }
   @media (max-width: 500px) {
@@ -715,14 +719,58 @@ div.cm-s-mdn-like span.CodeMirror-matchingbracket {
     color: #217dbb; }
 
 footer {
-  height: 35px;
+  height: 100px;
   background-color: dodgerblue;
   text-align: center;
-  padding-top: 9px; }
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
 
-.footer__link {
+.footer__link, .footer__link:visited {
   font-weight: bold;
   color: #fff; }
+
+.footer__top-row, .footer__middle-row, .footer__bottom-row {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  color: #fff; }
+
+.footer__top-row {
+  background-color: #6AB6FF;
+  font-size: 12px; }
+
+.footer__middle-row {
+  background-color: dodgerblue;
+  font-size: 12px; }
+
+.footer__bottom-row {
+  background-color: #035CB2;
+  font-size: 11px; }
 
 p {
   display: block;

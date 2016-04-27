@@ -6,21 +6,22 @@ import Footer from './components/footer/Footer';
 import {Provider} from 'react-redux';
 import store from './config/store';
 import CodeContainer from './components/code/CodeContainer';
-import AboutMe from './components/about-me/AboutMe';
+import About from './components/about/About';
 
 class Container extends React.Component {
     render() {
         return (
-            <div>
-                <Header />
+            <span>
                 <div className="max-width-container">
-                <Feature
-                    title={'Experimental In-Browser Code Editor'}
-                    link={'/code'}
-                    description={'An experimental in-browser editor built with React and Codemirror.'}
-                    />
+                    <Header />
+                    <Feature
+                        title={'Experimental In-Browser Code Editor'}
+                        link={'/code'}
+                        description={'An experimental in-browser editor built with React and Codemirror.'}
+                                />
                 </div>
-            </div>
+                <Footer />
+            </span>
         )
     }
 }
@@ -29,10 +30,10 @@ class App extends React.Component {
     render(){
         return (
             <Provider store={store}>
-                <Router history={ browserHistory }>
+                <Router history={browserHistory}>
                     <Route path="/" component={Container}></Route>
                     <Route path="/code" component={CodeContainer}></Route>
-                    <Route path="/about-me" component={AboutMe}></Route>
+                    <Route path="/about" component={About}></Route>
                 </Router>
             </Provider>
         )
