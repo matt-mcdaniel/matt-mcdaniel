@@ -36,6 +36,9 @@ h1, h2 {
   font-weight: 600;
   margin-bottom: 20px; }
 
+.app {
+  height: 100%; }
+
 .max-width-container, .subpage-container {
   min-height: 100%;
   height: auto !important;
