@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,600);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500);
 @import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);
 @import '_variables';
 @import '_base';
@@ -6,6 +7,8 @@
 //vendor
 @import 'vendor/codemirror';
 @import 'vendor/codemirror-mdn-like';
+@import 'vendor/the-matrix';
+@import 'vendor/liquibyte';
 
 //components
 @import '../components/code/_code';
@@ -14,6 +17,7 @@
 @import '../components/feature/_feature';
 @import '../components/footer/_footer';
 @import '../components/about/_about';
+@import '../components/terminal/_terminal';
 
 
 

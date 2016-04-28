@@ -55,7 +55,6 @@ class Code extends React.Component {
                     </ul>
                     <div className="code-mirror full">
                         <CodeMirror
-                            ref="codirror"
                             className={isFocused ? 'active': ''}
                             options={{
                                 theme: 'mdn-like',

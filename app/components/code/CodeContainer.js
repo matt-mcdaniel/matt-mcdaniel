@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch) => {
             if (!obj.active && window.hasOwnProperty('System')) {
                 console.log(window['System']);
                 dispatch(getLib(obj));
-            }
+            }   
         },
         setActiveLanguage: (str) => {
             dispatch(setActiveLanguage(str));   

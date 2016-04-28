@@ -4,7 +4,7 @@
     padding-bottom: 35px;
     margin-bottom: 35px;
     border-bottom: 1px solid #ededed;
-    padding: 60px 80px;
+    padding: 60px 80px 60px 0;
     background-color: #fff;
     
     @media (max-width: $mobile) {
@@ -14,7 +14,7 @@
 }
 
 .header-flex-text {
-    margin-top: 25px;
+    margin-top: 36px;
     width: 100%;
     
     @media (max-width: $mobile) {
@@ -39,17 +39,15 @@
     }
 }
 
-
-
 .name {
     margin-bottom: 10px;
 }
 
 .title {
     margin-bottom: 10px;
+    font-size: 16px;
     
     @media (max-width: $mobile) {
-        font-size: 16px;
         margin-bottom: 30px;
     }
 }

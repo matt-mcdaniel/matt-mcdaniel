@@ -12,7 +12,8 @@ html, body {
 body {
     padding: 0;
     background-color: #fff;
-    font-family: 'Open Sans';
+    font-family: $font;
+    font-weight: 300;
     color: $text;
 }
 
@@ -30,7 +31,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2 {
-    font-weight: 600;
+    font-family: $header;
+    font-weight: 700;
     margin-bottom: 20px;
 }
 
@@ -46,7 +48,7 @@ h1, h2 {
     margin: 0 auto -100px;
     
     margin: 0 auto auto 3em;
-    max-width: 32em;
+    max-width: 35em;
     
     @media (max-width: $mobile) {
         max-width: none;
