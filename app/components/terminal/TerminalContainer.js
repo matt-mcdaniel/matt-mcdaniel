@@ -4,14 +4,17 @@ import Terminal from './Terminal';
 
 const mapStateToProps = (state) => {
     return {
-        items: ['dog']
+        commands: state.terminal
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         onEnter: (str) => {
-            console.log(str)
+            dispatch({
+                type: 'ENTER',
+                command: str
+            })
         }
     }
 }

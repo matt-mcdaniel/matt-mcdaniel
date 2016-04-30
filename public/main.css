@@ -990,7 +990,7 @@ footer {
           flex-direction: column; }
 
 .footer__link, .footer__link:visited {
-  font-weight: 300;
+  font-weight: 400;
   color: #fff; }
 
 .footer__top-row, .footer__middle-row, .footer__bottom-row {
@@ -1026,7 +1026,10 @@ footer {
 
 .footer__bottom-row {
   background-color: #035CB2;
-  font-size: 11px; }
+  padding-top: 1px;
+  font-size: 10px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.4); }
 
 p {
   display: block;
@@ -1037,3 +1040,9 @@ p {
   margin-right: auto;
   max-width: 720px;
   padding: 1em; }
+
+.preview {
+  margin-bottom: 1em; }
+
+.preview__code {
+  font-family: "Inconsolata", Consolas, Monaco, monospace; }

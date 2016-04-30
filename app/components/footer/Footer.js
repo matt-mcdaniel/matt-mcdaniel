@@ -6,8 +6,8 @@ class Footer extends React.Component {
         return (
             <footer>
                 <div className="footer__top-row">
-                    <Link to="/about" className="footer__link">
-                        About Me
+                    <Link to="/" className="footer__link">
+                        Home
                     </Link>
                 </div>
                 <div className="footer__middle-row">
