@@ -1,0 +1,13 @@
+.file {
+    flex: 1;
+    height: 65px;
+    max-width: 55px;
+    position: relative;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    font-family: $mono;
+    border: 1px solid #d3d3d3;
+}

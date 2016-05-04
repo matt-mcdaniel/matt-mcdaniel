@@ -1,6 +1,7 @@
 import React from 'react';
 import CodeMirror from 'react-codemirror';
 import 'codemirror/mode/shell/shell';
+import Preview from './preview/Preview';
 
 class Terminal extends React.Component {
     constructor(props){
@@ -11,22 +12,23 @@ class Terminal extends React.Component {
     handleChange(str){
         let split = str.split(/\n/);
         
-        if (split[split.length - 1] === '' && split[split.length - 2] !== '') {
-            this.props.onEnter(split[split.length - 2]);
+        let isValid = split[split.length - 1] === '' && 
+            split[split.length - 2] !== '';
+        
+        if (isValid) {
+            var str = split[split.length - 2];
+            if (str !== undefined) {
+                this.props.onEnter(split[split.length - 2]);
+            } else {
+                console.log('is und:', str);
+            }
         }
     }
     render(){
-        console.log(this.props);
         return (
             <div className="code-mirror terminal">
                 <h2>Terminal Emulator</h2>
-                <div className="preview">
-                    {this.props.commands.slice(-3).map((d, i) => {
-                        return (
-                            <div className="preview__code" key={i}>{d}</div>
-                        )
-                    })}
-                </div>
+                <Preview {...this.props} />
                 <CodeMirror
                     className="CM-terminal"
                     options={{

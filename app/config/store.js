@@ -12,6 +12,6 @@ export default createStore(
     reducers,
     applyMiddleware(
         thunk, 
-        //loggerMiddleware
+        loggerMiddleware
     )
 )
