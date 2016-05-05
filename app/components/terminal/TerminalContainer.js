@@ -14,6 +14,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onEnter: (str) => {
+            
             dispatch({
                 type: 'ENTER',
                 command: str

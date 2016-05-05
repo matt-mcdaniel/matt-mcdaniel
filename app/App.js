@@ -1,10 +1,9 @@
 import React from 'react';
 import { Router, Route, IndexRedirect, IndexRoute, browserHistory } from 'react-router';
 import Header from './components/header/Header';
-
 import Footer from './components/footer/Footer';
 import {Provider} from 'react-redux';
-import store from './config/store';
+import store from './util/store';
 import CodeContainer from './components/code/CodeContainer';
 import TerminalContainer from './components/terminal/TerminalContainer';
 import About from './components/about/About';

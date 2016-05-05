@@ -1,19 +1,16 @@
-import {pipeline} from '../../config/utils.js';
+import {pipeline} from '../../util/utils.js';
+import store from '../../util/store';
 
-const ENTER = "ENTER";
 const MKDIR = "MKDIR";
 const TOUCH = "TOUCH";
+const RM = "RM";
 
 // folder structure
 const initialState = [
     {
-        name: 'commands.txt',
-        fileType: 'file',
-        contents: []
-    },
-    {
         name: 'app',
         fileType: 'folder',
+        index: 0,
         contents: [
             {
                 name: 'index.html',
@@ -26,6 +23,14 @@ const initialState = [
         ]
     }
 ]
+
+function getObjectByName(name) {
+    let root = store.getState().terminal;
+    
+    let match = root.filter((d) => d.name === name);
+    
+    return match[0]
+}
 
 export function submit(str) {
     return dispatch => {
@@ -60,6 +65,24 @@ export function submit(str) {
             }
         )];
         
+        let rm = ['rm', pipeline(
+            arr,
+            (arr) => arr[0] === 'rm',
+            (arr) => arr.length === 2,
+            (arr) => {
+                let obj = getObjectByName(arr[1]);
+                
+                if (obj) {
+                    dispatch({
+                        type: RM,
+                        index: obj.index
+                    })
+                }
+            }
+        )];
+        
+        console.log('touch:', touch, 'mkdir:', mkdir);
+        
     }
     
     
@@ -67,28 +90,20 @@ export function submit(str) {
 
 export default function terminal(state = initialState, action) {
     switch(action.type) {
-        case ENTER:
-            return [
-                {
-                    name: 'commands.txt',
-                    type: 'file',
-                    contents: [
-                        ...state[0].contents,
-                        action.command
-                    ]
-                },
-                ...state.slice(1)
-            ];
         case TOUCH:
             return [
                 ...state,
                 action
             ];
-            
         case MKDIR:
             return [
                 ...state,
                 action
+            ];
+        case RM:
+            return [
+                ...state.slice(0, action.index),
+                ...state.slice(action.index + 1)
             ];
         default:
             return state;

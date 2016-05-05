@@ -1,5 +1,4 @@
-import store from '../../config/store';
-
+import store from '../../util/store';
 
 export const REQUEST_LIB = 'REQUEST_LIB';
 export const RECEIVE_LIB = 'RECEIVE_LIB';

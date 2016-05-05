@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Code from './Code';
 import {getLib, setActiveLanguage} from './CodeActions';
-import store from '../../config/store';
 
 const mapStateToProps = ({ code }) => {
     return {
