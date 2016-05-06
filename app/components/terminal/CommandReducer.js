@@ -1,6 +1,6 @@
 const ENTER = "ENTER";
 
-export default function command(state = [], action) {
+export default function commands(state = [], action) {
     switch(action.type) {
         case ENTER:
             return [

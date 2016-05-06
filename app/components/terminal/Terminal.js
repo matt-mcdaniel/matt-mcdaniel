@@ -10,6 +10,8 @@ class Terminal extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange(str){
+        console.log(this.props.commands, str.match(''));
+        
         let chars = str.split('');
         let split = str.split(/\n/);
         

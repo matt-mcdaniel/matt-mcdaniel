@@ -1,13 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Terminal from './Terminal';
-import {submit} from './TerminalDucks';
-
-import {touch} from './TerminalDucks.js';
+import {submit} from './TerminalActions';
 
 const mapStateToProps = (state) => {
     return {
-        fileContents: state.terminal
+        commands: state.commands,
+        filesystem: state.terminal
     }
 }
 
@@ -20,9 +19,7 @@ const mapDispatchToProps = (dispatch) => {
                 command: str
             });
             
-            dispatch(
-                submit(str)
-            )
+            dispatch(submit(str));
         }
     }
 }
