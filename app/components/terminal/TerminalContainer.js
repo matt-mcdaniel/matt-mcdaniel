@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onEnter: (str) => {
+        submit: (str) => {
             
             dispatch({
                 type: 'ENTER',

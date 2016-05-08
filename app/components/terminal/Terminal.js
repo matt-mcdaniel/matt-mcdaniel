@@ -2,6 +2,8 @@ import React from 'react';
 import CodeMirror from 'react-codemirror';
 import 'codemirror/mode/shell/shell';
 import Preview from './preview/Preview';
+import {inputValidator} from '../../util/utils';
+
 
 class Terminal extends React.Component {
     constructor(props){
@@ -9,25 +11,17 @@ class Terminal extends React.Component {
         
         this.handleChange = this.handleChange.bind(this);
     }
+    
     handleChange(str){
-        console.log(this.props.commands, str.match(''));
         
-        let chars = str.split('');
-        let split = str.split(/\n/);
+        var valid = inputValidator(str);
         
-        let isValid = split[split.length - 1] === '' && 
-            split[split.length - 2] !== '';
-        
-        if (isValid) {
-            var str = split[split.length - 2];
-            if (str !== undefined) {
-                this.props.onEnter(split[split.length - 2]);
-            } else {
-                console.log('is und:', str);
-            }
+        if (valid) {
+            this.props.submit(str);
         }
     }
     render(){
+        var text = ['one', 'two', 'three']
         return (
             <div className="code-mirror terminal">
                 <h2>Terminal Emulator</h2>
