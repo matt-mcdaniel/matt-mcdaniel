@@ -6,7 +6,7 @@ export function submit(str) {
     return dispatch => {
     
         let arr = str.split(' ');
- 
+        
         let touch = pipeline(
             arr,
             (arr) => arr[0] === 'touch',

@@ -4,7 +4,7 @@ import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
 
 const loggerMiddleware = createLogger({
-    collapsed: true,
+    collapsed: false,
     timestamp: false
 });
 

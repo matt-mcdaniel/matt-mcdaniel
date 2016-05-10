@@ -4,22 +4,28 @@ import Terminal from './Terminal';
 import {submit} from './TerminalActions';
 
 const mapStateToProps = (state) => {
+    console.log(state);
     return {
-        commands: state.commands,
+        index: state.commands.index,
+        commands: state.commands.commands,
         filesystem: state.terminal
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        submit: (str) => {
-            
+        submitCmd: (str) => {
             dispatch({
                 type: 'ENTER',
                 command: str
             });
             
             dispatch(submit(str));
+        },
+        decrementCmd: () => {
+            dispatch({
+                type: 'DECREMENT'
+            });
         }
     }
 }

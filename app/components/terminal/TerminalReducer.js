@@ -26,7 +26,6 @@ const initialState = [
 export default function terminal(state = initialState, action) {
     switch(action.type) {
         case TOUCH:
-        console.log(action);
             return [
                 ...state,
                 Object.assign({}, {
@@ -35,7 +34,6 @@ export default function terminal(state = initialState, action) {
                 }, action)
             ];
         case MKDIR:
-        console.log(action);
             return [
                 ...state,
                 Object.assign({}, {
