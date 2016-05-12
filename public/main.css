@@ -1094,17 +1094,17 @@ p {
       -ms-flex-align: center;
           align-items: center;
   color: white;
-  font-size: 11px;
+  font-size: 14px;
   font-family: "Inconsolata", Consolas, Monaco, monospace; }
 
 .folder-back {
   position: absolute;
   left: 0;
   content: '';
-  height: 25px;
+  height: 40px;
   width: 90%;
   background-color: #7db9e8;
-  z-index: -2;
+  z-index: -30;
   top: -10%;
   box-shadow: inset 0 -10px 10px rgba(0, 0, 0, 0.2);
   margin-left: 5%; }
@@ -1119,10 +1119,11 @@ p {
   height: 25px;
   top: -5%;
   margin-left: 10%;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid #a0a0a0; }
 
 .text {
-  font-size: 15px;
+  font-size: 18px;
   color: #fff; }
 
 .file {
@@ -1146,6 +1147,6 @@ p {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 11px;
+  font-size: 14px;
   font-family: "Inconsolata", Consolas, Monaco, monospace;
   border: 2px solid #d3d3d3; }

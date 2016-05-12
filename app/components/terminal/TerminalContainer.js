@@ -26,6 +26,11 @@ const mapDispatchToProps = (dispatch) => {
             dispatch({
                 type: 'DECREMENT'
             });
+        },
+        incrementCmd: () => {
+            dispatch({
+                type: 'INCREMENT'
+            });
         }
     }
 }
