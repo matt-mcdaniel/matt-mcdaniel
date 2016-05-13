@@ -6,7 +6,7 @@ class Exonerations extends React.Component {
     render() {
         return (
             <div className="feature">
-                <h2>Mistaken Witness Identification: Race Makes a Difference</h2>
+                <h2 className="exonerations__subtitle">Mistaken Witness Identification: Race Makes a Difference</h2>
                 <p>Contributing Factors for Exoneration in the United States Since 1989</p>
                 <figure className="exonerations" ref="exonerations"></figure>
                 <p className="footnote">Full descriptions and data publicly available from <a href="www.law.umich.edu/special/exoneration/Pages/detaillist.aspx">The National Registry of Exonerations</a></p>

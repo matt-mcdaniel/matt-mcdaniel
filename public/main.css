@@ -1154,6 +1154,9 @@ p {
 .exonerations {
   height: 350px; }
 
+.exonerations__subtitle {
+  margin-bottom: 5px; }
+
 .x, .y {
   fill: none;
   shape-rendering: crispEdges;
