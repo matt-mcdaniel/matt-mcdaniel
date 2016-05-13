@@ -25,12 +25,6 @@ export function submit(str) {
             (arr) => arr.length === 2
         );
         
-        let cd = pipeline(
-            arr,
-            (arr) => arr[0] === 'cd',
-            (arr) => arr.length === 2
-        )
-        
         if (touch) {
             dispatch({
                 type: actions.TOUCH,
@@ -44,11 +38,6 @@ export function submit(str) {
         } else if (rm) {
             dispatch({
                 type: actions.RM,
-                name: arr[1]
-            });
-        } else if (cd) {
-            dispatch({
-                type: actions.CD,
                 name: arr[1]
             });
         }
