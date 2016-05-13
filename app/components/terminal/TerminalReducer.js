@@ -5,8 +5,9 @@ import {
 } from './TerminalConstants';
 
 // folder structure
-const initialState = [
-    {
+const initialState = {
+    path: '/',
+    filesystem: {
         name: 'app',
         fileType: 'folder',
         index: 0,
@@ -21,32 +22,38 @@ const initialState = [
             }
         ]
     }
-];
+};
 
 export default function terminal(state = initialState, action) {
     switch(action.type) {
         case TOUCH:
-            return [
-                ...state,
-                Object.assign({}, {
-                    fileType: 'file',
-                    contents: 'empty'
-                }, action)
-            ];
+            return Object.assign({}, state, {
+                filesystem: [
+                    ...state.filesystem,
+                    Object.assign({}, {
+                        fileType: 'file',
+                        contents: ''
+                    })
+                ]
+            });
         case MKDIR:
-            return [
-                ...state,
-                Object.assign({}, {
-                    fileType: 'folder',
-                    contents: []
-                }, action)
-            ];
+            return Object.assign({}, state, {
+                filesystem: [
+                    ...state.filesystem,
+                    Object.assign({}, {
+                        fileType: 'folder',
+                        contents: ''
+                    })
+                ]
+            });
         case RM:
             let index = state.findIndex((x) => x.name === action.name.trim());
-            return [
-                ...state.slice(0, index),
-                ...state.slice(index + 1)
-            ];
+            return Object.assign({}, state, {
+                filesystem: [
+                    ...state.filesystem.slice(0, index),
+                    ...state.filesystem.slice(index + 1)
+                ]
+            });
         default:
             return state;
     }

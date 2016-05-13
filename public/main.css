@@ -41,7 +41,7 @@ h1, h2 {
   height: 100%;
   margin: 0 auto -100px;
   margin: 0 auto auto 3em;
-  max-width: 35em; }
+  max-width: 45em; }
   @media (max-width: 500px) {
     .max-width-container, .subpage-container {
       max-width: none;
@@ -1150,3 +1150,26 @@ p {
   font-size: 14px;
   font-family: "Inconsolata", Consolas, Monaco, monospace;
   border: 2px solid #d3d3d3; }
+
+.exonerations {
+  height: 350px; }
+
+.x, .y {
+  fill: none;
+  shape-rendering: crispEdges;
+  stroke: none;
+  stroke-width: 1; }
+
+.x text, .y text, .label {
+  font-size: 12px;
+  fill: #a0a0a0;
+  stroke: none;
+  text-anchor: start; }
+
+.bar {
+  cursor: pointer; }
+
+.footnote {
+  text-align: center;
+  font-size: 11px;
+  color: #a0a0a0; }

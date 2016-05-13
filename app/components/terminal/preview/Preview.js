@@ -7,7 +7,6 @@ class Preview extends React.Component {
         return (
             <div className="preview">
                 {this.props.filesystem.map((d, i) => {
-                    console.log(d);
                     return d.fileType === 'folder' ? 
                         <Folder key={i} 
                             name={d.name} 

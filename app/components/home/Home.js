@@ -2,12 +2,14 @@ import React from 'react';
 
 import Header from '../header/Header';
 import Feature from '../feature/Feature';
+import Exonerations from '../exonerations/Exonerations';
 
 class Home extends React.Component {
     render() {
         return (
             <span>
                 <Header />
+                <Exonerations />
                 <Feature
                     title={'Experimental In-Browser Code Editor'}
                     link={'/code'}

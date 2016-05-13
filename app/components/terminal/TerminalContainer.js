@@ -4,7 +4,6 @@ import Terminal from './Terminal';
 import {submit} from './TerminalActions';
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         index: state.commands.index,
         commands: state.commands.commands,

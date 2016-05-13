@@ -1,0 +1,27 @@
+.exonerations {
+	height: 350px;
+}
+
+.x, .y {
+	fill: none;
+	shape-rendering: crispEdges;
+	stroke: none;
+	stroke-width: 1;
+}
+
+.x text, .y text, .label {
+	font-size: 12px;
+	fill: #a0a0a0;
+	stroke: none;
+	text-anchor: start;
+}
+
+.bar {
+	cursor: pointer;
+}
+
+.footnote {
+  text-align: center;
+ 	font-size: 11px;
+  color: #a0a0a0;
+}
