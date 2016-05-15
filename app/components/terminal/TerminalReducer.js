@@ -1,3 +1,5 @@
+import {assign} from '../../util/util';
+
 import {
     TOUCH,
     MKDIR,
@@ -6,19 +8,23 @@ import {
 
 // folder structure
 const initialState = {
-    path: '/',
+    workingDir: '/',
     filesystem: {
-        name: 'app',
+        name: 'root',
+        path: '/',
         fileType: 'folder',
-        index: 0,
         contents: [
             {
                 name: 'index.html',
-                type: 'file'
+                path: '/index.html',
+                fileType: 'file',
+                contents: '<Nope/>'
             },
             {
                 name: 'app.js',
-                type: 'file'
+                path: '/app.js',
+                fileType: 'file',
+                contents: 'no Javascript yet!'
             }
         ]
     }
@@ -27,28 +33,32 @@ const initialState = {
 export default function terminal(state = initialState, action) {
     switch(action.type) {
         case TOUCH:
-            return Object.assign({}, state, {
+            return assign(state, {
                 filesystem: [
                     ...state.filesystem,
-                    Object.assign({}, {
+                    {
+                        name: action.name,
                         fileType: 'file',
-                        contents: ''
-                    })
+                        contents: '',
+                        path: state.workingDir + action.name
+                    }
                 ]
             });
         case MKDIR:
-            return Object.assign({}, state, {
+            return assign(state, {
                 filesystem: [
                     ...state.filesystem,
-                    Object.assign({}, {
-                        fileType: 'folder',
-                        contents: ''
-                    })
+                    {
+                        name: action.name,
+                        fileType: 'file',
+                        contents: '',
+                        path: state.workingDir + action.name
+                    }
                 ]
             });
         case RM:
             let index = state.findIndex((x) => x.name === action.name.trim());
-            return Object.assign({}, state, {
+            return assign(state, {
                 filesystem: [
                     ...state.filesystem.slice(0, index),
                     ...state.filesystem.slice(index + 1)

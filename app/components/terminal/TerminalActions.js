@@ -1,4 +1,4 @@
-import {pipeline} from '../../util/utils.js';
+import {pipeline} from '../../util/util';
 import store from '../../util/store';
 import * as actions from './TerminalConstants';
 

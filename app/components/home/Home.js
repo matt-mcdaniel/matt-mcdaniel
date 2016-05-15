@@ -15,11 +15,13 @@ class Home extends React.Component {
                     link={'/code'}
                     description={'An experimental in-browser editor built with React and Codemirror.'}
                     />
+                {/*
                 <Feature
                     title={'Terminal Emulator'}
                     link={'/terminal'}
                     description={'A terminal shell emulator.'}
                     />
+                */}
             </span>
         )
     }

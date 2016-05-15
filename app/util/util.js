@@ -13,3 +13,7 @@ export function pipeline(arr, ...fns) {
 export function assign(state, mergeObj) {
     return Object.assign({}, state, mergeObj);
 }
+
+export function getContentsByIndex(workingDir, filesystem) {
+    return filesystem.filesystem.contents;
+}

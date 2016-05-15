@@ -1,4 +1,4 @@
-import {assign} from '../../util/utils';
+import {assign} from '../../util/util';
 
 const ENTER = "ENTER";
 const DECREMENT = "DECREMENT";
