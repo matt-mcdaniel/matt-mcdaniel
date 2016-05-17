@@ -40,13 +40,13 @@ class Terminal extends React.Component {
     }
     
     keyHandled(cm, key, e) {
-        // recall last command
+        // cycle command backward
         if (key === 'Up') {
             this.props.decrementCmd();
             this.updateLine(cm, (line) => line + 1);
         }
         
-                // recall last command
+        // cycle command forward
         if (key === 'Down') {
             this.props.incrementCmd();
             this.updateLine(cm, (line) => line);
@@ -66,7 +66,6 @@ class Terminal extends React.Component {
     }
     
     render(){
-        var text = ['one', 'two', 'three']
         return (
             <div onKeyDown={this.keyDown} className="code-mirror terminal">
                 <h2>Terminal Emulator</h2>
@@ -82,6 +81,9 @@ class Terminal extends React.Component {
                     // fires on any activity
                     onChange={this.handleChange}
                     />
+                <div>
+                    {this.props.filesystem.workingDir}
+                </div>
             </div>
         )
     }
@@ -97,4 +99,4 @@ class Terminal extends React.Component {
 }
 
 
-export default Terminal;export default Terminal;
+export default Terminal;

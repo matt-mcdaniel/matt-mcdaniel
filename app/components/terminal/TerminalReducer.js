@@ -3,7 +3,8 @@ import {assign} from '../../util/util';
 import {
     TOUCH,
     MKDIR,
-    RM
+    RM,
+    CD
 } from './TerminalConstants';
 
 // folder structure
@@ -34,35 +35,46 @@ export default function terminal(state = initialState, action) {
     switch(action.type) {
         case TOUCH:
             return assign(state, {
-                filesystem: [
-                    ...state.filesystem,
-                    {
-                        name: action.name,
-                        fileType: 'file',
-                        contents: '',
-                        path: state.workingDir + action.name
-                    }
-                ]
+                filesystem: {
+                    contents: [
+                        ...state.filesystem.contents,
+                        {
+                            name: action.name,
+                            fileType: 'file',
+                            contents: '',
+                            path: state.workingDir + action.name
+                        }
+                    ]
+                }
             });
         case MKDIR:
             return assign(state, {
-                filesystem: [
-                    ...state.filesystem,
-                    {
-                        name: action.name,
-                        fileType: 'file',
-                        contents: '',
-                        path: state.workingDir + action.name
-                    }
-                ]
+                filesystem: {
+                    contents: [
+                        ...state.filesystem.contents,
+                        {
+                            name: action.name,
+                            fileType: 'folder',
+                            contents: [],
+                            path: state.workingDir + action.name
+                        }
+                    ]
+                }
             });
         case RM:
-            let index = state.findIndex((x) => x.name === action.name.trim());
+            let index = state.filesystem.contents
+                .findIndex((x) => x.name === action.name.trim());
             return assign(state, {
-                filesystem: [
-                    ...state.filesystem.slice(0, index),
-                    ...state.filesystem.slice(index + 1)
-                ]
+                filesystem: {
+                    contents: [
+                        ...state.filesystem.contents.slice(0, index),
+                        ...state.filesystem.contents.slice(index + 1)
+                    ]
+                }
+            });
+        case CD:
+            return assign(state, {
+                workingDir: action.dir
             });
         default:
             return state;

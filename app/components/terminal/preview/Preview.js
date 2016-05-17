@@ -1,23 +1,20 @@
 import React from 'react';
 import Folder from '../folder/Folder';
 import File from '../file/File';
-import {getContentsByIndex} from '../../../util/util';
+import {getContentsByPath} from '../../../util/util';
 
 
 class Preview extends React.Component {
     
     shouldComponentUpdate(nextProps){
         
-        console.log('nextProps', nextProps);
-        return false;
+        return true;
     }
     
     render(){
-        let filesystem = this.props.filesystem;
+        let state = this.props.filesystem;
         let {workingDir} = this.props.filesystem;
-        let contents = getContentsByIndex(workingDir, filesystem);
-        
-        //console.log('contents', contents);
+        let contents = getContentsByPath(workingDir, state);
         
         return (
             <div className="preview">
