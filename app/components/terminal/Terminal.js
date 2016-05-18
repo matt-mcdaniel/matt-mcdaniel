@@ -68,7 +68,14 @@ class Terminal extends React.Component {
     render(){
         return (
             <div onKeyDown={this.keyDown} className="code-mirror terminal">
-                <h2>Terminal Emulator</h2>
+                <h2>Browser Bash</h2>
+                <p>An experimental in-browser bash simulator.</p>
+                <ul className="terminal__supported-commands">
+                    <li>TOUCH</li>
+                    <li>MKDIR</li>
+                    <li>RM</li>
+                    <li>CD</li>
+                </ul>
                 <Preview {...this.props} />
                 <CodeMirror
                     ref="codemirror"

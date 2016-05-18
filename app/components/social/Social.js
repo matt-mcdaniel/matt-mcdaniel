@@ -17,6 +17,11 @@ class Social extends React.Component {
                 text: 'Codepen',
                 href: 'http://codepen.io/himmel/',
                 src: '../img/codepen.svg'
+            },
+            {
+                text: 'Stackoverflow',
+                href: 'http://stackoverflow.com/users/3856666/himmel?tab=profile',
+                src: '../img/stackoverflow.svg'
             }
         ];
         

@@ -5,6 +5,16 @@
     padding: 1em;
 }
 
+.terminal__supported-commands {
+    margin-left: 15px;
+    li {
+        margin-bottom: 6px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+    
+}
+
 .preview__code {
     font-family: $mono;
 }

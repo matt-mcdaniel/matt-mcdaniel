@@ -1,27 +1,30 @@
 import React from 'react';
-
 import Header from '../header/Header';
 import Feature from '../feature/Feature';
-import Exonerations from '../exonerations/Exonerations';
+
 
 class Home extends React.Component {
     render() {
         return (
             <span>
-                <Header />
-                <Exonerations />
+                <Feature
+                    title={'Browser Bash'}
+                    link={'/terminal'}
+                    description={'A basic in-browser terminal for filesystem manipulation'}
+                    tags={['Web Application']}
+                />
+                <Feature
+                    title={'Mistaken Witness Identification'}
+                    link={'/exonerations'}
+                    description={'A look at the data behind all of the exonerations in U.S. history'}
+                    tags={['Data Visualization']}
+                />
                 <Feature
                     title={'Experimental In-Browser Code Editor'}
                     link={'/code'}
                     description={'An experimental in-browser editor built with React and Codemirror.'}
-                    />
-                {/*
-                <Feature
-                    title={'Terminal Emulator'}
-                    link={'/terminal'}
-                    description={'A terminal shell emulator.'}
-                    />
-                */}
+                    tags={['Web Application']}
+                />
             </span>
         )
     }

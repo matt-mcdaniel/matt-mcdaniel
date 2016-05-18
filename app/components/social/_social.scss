@@ -1,8 +1,19 @@
 .social-container {
     display: flex;
+    @media (max-width: $mobile) {
+        margin-top: 8px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+
+.home .social-container {
+    display: flex;
     justify-content: flex-start;
     max-width: 335px;
     margin-left: -13px;
+    margin-top: 6px;
     
     @media (max-width: $mobile) {
         display: block;
@@ -45,6 +56,13 @@
         margin-top: -3px;
     }
 
+}
+
+.stackoverflow {
+    img {
+        margin-top: -4px;
+        margin-left: -3px;
+    }
 }
 
 

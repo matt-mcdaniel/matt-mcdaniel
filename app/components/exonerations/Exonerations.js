@@ -5,7 +5,7 @@ import data from '../../data/exonerees.json!json';
 class Exonerations extends React.Component {
     render() {
         return (
-            <div className="feature">
+            <div className="exonerations__container">
                 <h2 className="exonerations__subtitle">Mistaken Witness Identification: Race Makes a Difference</h2>
                 <p>Contributing Factors for Exoneration in the United States Since 1989</p>
                 <figure className="exonerations" ref="exonerations"></figure>

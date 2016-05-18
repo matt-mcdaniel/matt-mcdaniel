@@ -1,31 +1,62 @@
 .header-flex {
+    height: 50px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    justify-content: space-between;
+    
+
+}
+
+.header__img {
+    width: 50px;
+    height: 50px;
+}
+
+.header-flex-text {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.name, .title, .more-about-me {
+    display: none;
+}
+
+.social-container {
+    margin: 0;
+    justify-content: flex-end;
+}
+
+.social-container .social .social__text {
+    display: none;
+}
+
+
+.home.header-flex {
+    height: auto;
     display: flex;
     flex-direction: row;
     padding-bottom: 35px;
     margin-bottom: 35px;
     border-bottom: 1px solid #ededed;
-    padding: 60px 80px 60px 0;
+    padding: 60px 80px 60px 60px;
     background-color: #fff;
+    box-shadow: none;
     
     @media (max-width: $mobile) {
+        height: 650px;
+        padding: 10px;
         flex-direction: column;
         align-items: center;
     }
 }
 
-.header-flex-text {
-    margin-top: 36px;
-    width: 100%;
-    
-    @media (max-width: $mobile) {
-        margin-top: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
 
-.header__img {
+// Home styles
+.home .header__img {
     padding: 10px;
     width: 150px;
     height: 150px;
@@ -39,15 +70,63 @@
     }
 }
 
-.name {
+.home .header-flex-text {
+    margin-top: 15px;
+    justify-content: space-between;
+    height: 150px;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    @media (max-width: $mobile) {
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.home .name {
+    display: block;
     margin-bottom: 10px;
 }
 
-.title {
-    margin-bottom: 10px;
+.home .title {
     font-size: 16px;
+    display: block;
+    margin-bottom: 6px;
     
     @media (max-width: $mobile) {
         margin-bottom: 30px;
     }
 }
+
+.home .more-about-me {
+    display: block;
+    background-color: dodgerblue;
+    font-size: 11px;
+    padding: 4px 10px 4px;
+    color: #fff !important;
+    margin: 10px 0 10px;
+    
+    @media (max-width: $mobile) {
+        padding: 10px;
+        font-size: 14px;
+        margin: 0 10px 20px;
+    }
+    
+    &:hover {
+        background-color: lighten(dodgerblue, 10%);
+        
+    }
+    
+}
+
+.home .social-container .social .social__text {
+    display: inline-block;
+}
+
+
+
+
+
