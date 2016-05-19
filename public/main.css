@@ -944,10 +944,10 @@ div.cm-s-mdn-like span.CodeMirror-matchingbracket {
 
 .home .more-about-me {
   display: block;
-  background-color: dodgerblue;
-  font-size: 11px;
+  border: 1px solid dodgerblue;
+  font-size: 16px;
   padding: 4px 10px 4px;
-  color: #fff !important;
+  color: dodgerblue !important;
   margin: 10px 0 10px; }
   @media (max-width: 500px) {
     .home .more-about-me {
@@ -955,7 +955,8 @@ div.cm-s-mdn-like span.CodeMirror-matchingbracket {
       font-size: 14px;
       margin: 0 10px 20px; } }
   .home .more-about-me:hover {
-    background-color: #51a9ff; }
+    background-color: dodgerblue;
+    color: #fff !important; }
 
 .home .social-container .social .social__text {
   display: inline-block; }
@@ -1158,9 +1159,22 @@ footer {
   font-weight: 300;
   color: rgba(255, 255, 255, 0.4); }
 
-p {
+.about-me__container p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.87;
   display: block;
   margin-bottom: 20px; }
+
+p.about-me__lead-in {
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 1.8;
+  padding-bottom: 18px;
+  border-bottom: 1px dashed #333; }
+
+.about-me__link {
+  color: dodgerblue !important; }
 
 .terminal {
   margin-left: auto;

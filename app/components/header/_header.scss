@@ -103,10 +103,10 @@
 
 .home .more-about-me {
     display: block;
-    background-color: dodgerblue;
-    font-size: 11px;
+    border: 1px solid dodgerblue;
+    font-size: 16px;
     padding: 4px 10px 4px;
-    color: #fff !important;
+    color: dodgerblue !important;
     margin: 10px 0 10px;
     
     @media (max-width: $mobile) {
@@ -116,7 +116,8 @@
     }
     
     &:hover {
-        background-color: lighten(dodgerblue, 10%);
+        background-color: dodgerblue;
+        color: #fff !important;
         
     }
     

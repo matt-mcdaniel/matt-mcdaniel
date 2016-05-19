@@ -1,4 +1,22 @@
-p {
-    display: block;
-    margin-bottom: 20px;
+.about-me__container {
+    p {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.87;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+p.about-me__lead-in {
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 1.8;
+    
+    padding-bottom: 18px;
+    border-bottom: 1px dashed #333;
+}
+
+.about-me__link {
+    color: dodgerblue !important;
 }
