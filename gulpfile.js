@@ -37,14 +37,14 @@ gulp.task('serve', ['styles'], function() {
         res.sendFile(__dirname + '/index.html');
     });
     
-    app.listen(3000, 'localhost');
+    app.listen(8080, 'localhost');
     
     browserSync.init({
         open: false,
         reloadOnRestart: true,
         notify: false,
         proxy: {
-            target: 'http://localhost:3000'
+            target: 'http://localhost:8080'
         }
     });
     
