@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../header/Header';
-import Feature from '../feature/Feature';
+import Feature from '../feature/FeatureOuter';
 
 // http://matt-mcdaniel.github.io/domain-inspector/
 

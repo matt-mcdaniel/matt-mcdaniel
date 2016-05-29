@@ -1,10 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router';
 
 class Feature extends React.Component {
-    render(){
+    render() {
         return (
-            <Link to={this.props.link} className="feature">
+            <span>
                 <h1 className="feature__title">{this.props.title}</h1>
                 <p className="feature__description">{this.props.description}</p>
                 {this.props.tags.map((g, i) => {
@@ -16,7 +15,7 @@ class Feature extends React.Component {
                         >{g}</p>
                     )
                 })}
-            </Link>
+            </span>
         )
     }
 }

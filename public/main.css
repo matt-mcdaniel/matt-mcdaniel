@@ -1072,7 +1072,8 @@ div.cm-s-mdn-like span.CodeMirror-matchingbracket {
   display: block;
   padding: 20px 20px 0 40px;
   border-left: 4px solid #cecece;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  position: relative; }
 
 .feature__title {
   display: inline-block;
@@ -1099,6 +1100,14 @@ div.cm-s-mdn-like span.CodeMirror-matchingbracket {
   display: inline-block;
   padding: 7px 0;
   font-weight: 300; }
+
+.feature__location {
+  position: absolute;
+  top: 0;
+  font-size: 10px;
+  color: #d3d3d3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px; }
 
 footer {
   margin-top: 80px;
