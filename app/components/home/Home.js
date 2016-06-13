@@ -12,7 +12,7 @@ class Home extends React.Component {
                 <Feature
                     title={'Top Level Domain Inspector'}
                     location={'External'}
-                    link={'http://matt-mcdaniel.github.io/domain-inspector/'}
+                    link={'http://domaindetective.io'}
                     description={'Search and filter for customized Top-Level-Domain names.'}
                     tags={['Web Application']}
                 />
